@@ -1,0 +1,62 @@
+<form #userForm="ngForm" (submit)="onSubmit(userForm)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <md-input-container>
+          <input mdInput
+                 placeholder="Nombre"
+                 ngModel
+                 #name="ngModel"
+                 [(ngModel)]="user.first_name"
+                 name="name"
+                 autocomplete="off"
+                 required>
+        </md-input-container>
+      </div>
+      <div class="col-lg-4">
+        <md-slide-toggle
+          [checked]="user.status"
+          [(ngModel)]="user.status"
+          name="status">Estado
+        </md-slide-toggle>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <md-input-container>
+          <input mdInput
+                 placeholder="Apellidos"
+                 [(ngModel)]="user.last_name"
+                 #lastname="ngModel"
+                 name="lastname"
+                 autocomplete="off"
+                 required
+                 ngModel>
+        </md-input-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <md-input-container>
+          <input mdInput
+                 placeholder="Correo Electronico"
+                 ngModel
+                 name="email"
+                 #email="ngModel"
+                 [(ngModel)]="user.email"
+                 required
+                 autocomplete="off">
+        </md-input-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 text-center">
+        <button md-raised-button color="primary" [disabled]="!userForm.valid" type="submit">Guardar</button>
+      </div>
+      <div class="col-lg-6 text-center">
+        <button md-raised-button color="primary" (click)="dialogRef.close(user)">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</form>
+

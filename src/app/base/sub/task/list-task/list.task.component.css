@@ -1,0 +1,27 @@
+.status-locked{
+  color: #FF4136;
+}
+
+.status-draft{
+  color: #AAAAAA;
+}
+
+.status-publish{
+  color: #2ECC40;
+}
+
+md-card{
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-size: 14px;
+  padding: 20px;
+  height: 100%;
+}
+
+md-card .card-subtitle{
+  color: rgba(0,0,0,.54);
+  font-size: 12px;
+}
+
+md-card-content{
+  margin: 7px 0 0;
+}

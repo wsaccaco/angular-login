@@ -1,0 +1,30 @@
+image: registry.gitlab.ec.pe/frontend/pwa/node
+before_script:
+  - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+  - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+  - export AWS_DEFAULT_REGION=us-east-1
+  - npm install --production
+stages:
+  - build
+
+lambda_master:
+  stage: build
+  script:
+    - npm run deploy-dev
+    - cd dist
+    - aws s3 sync . s3://qa.web.audiencias.de/ --include '*' --delete
+  only:
+    - master
+  tags:
+    - docker
+
+lambda_production:
+  stage: build
+  script:
+    - npm run deploy-pro
+    - cd dist
+    - aws s3 sync . s3://web.audiencias.de/ --include '*' --delete
+  only:
+    - prod
+  tags:
+    - docker

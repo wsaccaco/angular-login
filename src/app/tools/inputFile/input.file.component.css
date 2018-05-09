@@ -1,0 +1,23 @@
+.input-file, .file_input, .file_input_text{
+  display: flex;
+}
+
+.file_input{
+  margin: 7px;
+}
+
+.file_input label {
+  margin: 0;
+  background-color: #3f51b5;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  color: #FFF;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.file_input_text{
+  width: 100%;
+}

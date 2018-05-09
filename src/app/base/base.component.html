@@ -1,0 +1,44 @@
+<nav class="nav-wsc">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2 col-lg-1">
+        <button class="btn btn-secondary btn-without-border" (click)="sidenavMenu.toggle()">
+          <md-icon>menu</md-icon>
+        </button>
+      </div>
+      <div class="col-lg-3 col-8 offset-2 offset-lg-8 text-right">
+        <ul class="menuList">
+          <li class="white">
+            <a href="javascript:void(0)" class="link" (click)="logout()">
+              <span class="icon-wrap">
+                <i class="material-icons">account_box</i> Cerrar Sessión
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<md-sidenav-container class="example-sidenav-fab-container">
+  <md-sidenav class="sidenavMenu" #sidenavMenu mode="side" opened="true">
+    <ul class="sidebar">
+      <li class="sidebar-item sidebar-head">
+        <img  src="http://statics.ecoid.pe/elcomercio/signWall/img/logotipo.png" alt="">
+      </li>
+      <li class="sidebar-item" routerLinkActive="active" [routerLink]="['user']">
+        <span class="icon-wrap">
+          <i class="material-icons">&#xE150;</i> Usuarios
+        </span>
+      </li>
+      <li class="sidebar-item" routerLinkActive="active" [routerLink]="['task']">
+        <span class="icon-wrap">
+          <i class="material-icons">done_all</i> Tareas
+        </span>
+      </li>
+    </ul>
+  </md-sidenav>
+  <router-outlet></router-outlet>
+</md-sidenav-container>
+

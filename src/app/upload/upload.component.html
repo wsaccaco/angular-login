@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-10">
+      <a href="javascript:void(0)" (click)="logout()">Cerrar Sesion</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <md-tab-group selectedIndex="2">
+        <md-tab label="Upload File">
+          <form #file="ngForm" method="POST" (submit)="onSubmit($event, file);  $event.preventDefault()">
+            <div class="row">
+              <div class="col-12">
+                <md-card class="text-center">
+                  <div class="row">
+                    <div class="col-sm-6 text-right">
+                      <span>{{inputFile.name}}</span>
+                      <input
+                        type="file"
+                        class="hide"
+                        placeholder="Nombre"
+                        id="input-file-id"
+                        ngModel
+                        #name="ngModel"
+                        [(ngModel)]="file.name"
+                        name="name"
+                        (change)="onChangeFile($event)"
+                        autocomplete="off"
+                        required>
+                      <label for="input-file-id" class="btn-simulate">Choose Files</label>
+                    </div>
+                    <div class="col-sm-6 text-left">
+                      <button md-raised-button color="primary" [disabled]="inputFile.disabled" type="submit"><i
+                        class="material-icons">cloud_upload</i> Upload File
+                      </button>
+                    </div>
+                  </div>
+                  <div class="text-center" [ngClass]="{hide: !inputFile.disabled}">
+                    <md-card-content>
+                      <md-progress-spinner
+                        style="width: auto;"
+                        [mode]="inputFile.mode"
+                        [value]="inputFile.progress">
+                      </md-progress-spinner>
+                    </md-card-content>
+                  </div>
+                </md-card>
+              </div>
+            </div>
+          </form>
+        </md-tab>
+        <md-tab label="Events Upload" active="true">
+          <div class="row">
+            <div class="col-12">
+              <div class="wrap-table">
+                <table class="pure-table pure-table-horizontal">
+                  <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>File</th>
+                    <th>Model</th>
+                    <th>Date</th>
+                    <th>Options</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of uploads; let i = index;" [ngClass]="{'item-deleted': !item.status, 'hidden': !item.status}" >
+                        <td>{{i+1}}</td>
+                        <td>{{item.filename}}</td>
+                        <td>{{item.source}}</td>
+                        <td><span>{{item.date}}</span></td>
+                        <td>
+                          <div class="badge icon-wrap align-items-center">
+                            <button class="btn btn-secondary margin-h-default" (click)="deleteItem(item)"
+                                    *ngIf="item.status && !item.process">
+                              <i class="material-icons">delete</i>
+                            </button>
+                            <button class="btn btn-secondary margin-h-default" #process (click)="processItem(item, process)"
+                                    *ngIf="!item.process">
+                              <i class="material-icons">loop</i>
+                            </button>
+                          </div>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </md-tab>
+      </md-tab-group>
+    </div>
+  </div>
+</div>
+

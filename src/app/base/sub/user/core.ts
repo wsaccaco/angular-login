@@ -1,0 +1,5 @@
+export { ListUserComponent } from './list-users/list.users.component'
+export { EditUserComponent } from './edit-users/edit.user.component'
+export { CenterUserComponent } from './center-users/center.user.component'
+export { FormUserComponent } from './form-user/form.users.component'
+export { NewUserComponent } from './new-users/new.users.component'

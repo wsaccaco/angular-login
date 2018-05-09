@@ -1,0 +1,13 @@
+<div class="input-file">
+  <div class="file_input">
+    <label class="image_input_button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
+      <i class="material-icons">file_upload</i>
+      <input id="file_input_file" class="none" #file (change)="changeText(file); changeState(file)" style="display: none" type="file" />
+    </label>
+  </div>
+  <div id="file_input_text" class="file_input_text">
+    <md-input-container>
+      <input mdInput placeholder="File Name Upload"  [value]="fileInputText">
+    </md-input-container>
+  </div>
+</div>

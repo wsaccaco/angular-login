@@ -1,0 +1,130 @@
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+.text-left{
+  text-align: left;
+}
+.icon-wrap{
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.icon-wrap .material-icons{
+  margin-right: 10px;
+}
+
+.mat-dialog-container{
+  margin: auto;
+}
+
+.mat-input-container{
+  width: 100%;
+}
+
+.input-group{
+  display: flex;
+}
+.input-group .icon-wrap{
+  margin: 1em 0;
+}
+.input-group .mat-input-container{
+  /*display: flex;*/
+}
+
+.btn{
+  display: inline-flex;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 3px 7px;
+  font-size: 1rem;
+  border-radius: .25rem;
+}
+
+.btn[disabled]{
+  color: #9a9a9a;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+.btn-secondary{
+  color: #292b2c;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.btn-secondary:hover{
+  color: #292b2c;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+.ngFor-space{
+  margin-bottom: 10px;
+}
+
+.card-status{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  display: inline-flex;
+}
+
+.card-status i{
+  font-size: 12px;
+}
+
+
+.md-card-options{
+  transition: all 0.5s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #FFF;
+  opacity: 0;
+}
+
+.options-wrap{
+  margin: 6px 4px;
+  max-width: 35px;
+}
+
+.options-wrap .btn{
+  margin-bottom: 4px;
+}
+
+
+.icon-sm{
+  font-size: 20px;
+}
+
+.nav-wsc{
+  padding: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+  background-color: #0074D9;
+}
+
+.display-1{
+  font-weight: 300;
+  font-size: 2.6em;
+}
+
+form.ngError md-hint{
+  color: red;
+}
+
+.hint-error{
+  box-sizing: inherit;
+  font-size: 12px;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  top: -4px;
+  position: relative;
+}

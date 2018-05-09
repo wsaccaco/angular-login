@@ -1,0 +1,16 @@
+@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+body{
+  margin: 0;
+}
+
+.hidden{
+  display: none;
+}
+
+.text-error{
+  margin-top: 15px;
+  text-align: center;
+  color: #FF4136;
+  font-size: 0.9em;
+  font-style: italic;
+}

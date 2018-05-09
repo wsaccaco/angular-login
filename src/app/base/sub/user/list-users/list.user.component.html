@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="input-group">
+        <span class="icon-wrap">
+          <i class="material-icons">&#xE8B6;</i>
+        </span>
+        <md-input-container>
+          <input mdInput placeholder="Buscar" #search (input)="filters(search.value)">
+        </md-input-container>
+      </div>
+    </div>
+    <div class="col-lg-1">
+      <button md-raised-button color="primary" (click)="openModalForm('new')"><md-icon>add</md-icon> Agregar</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-3 col-lg-4 col-md-6 ngFor-space" *ngFor="let user of users">
+      <md-card class="example-card">
+        <span class="card-status" [ngClass]="{'status-inactive':!user.status, 'status-active':user.status}">
+          <i class="material-icons">&#xE061;</i>
+        </span>
+        <md-card-header>
+          <md-card-title>{{user.first_name}}, {{user.last_name}}</md-card-title>
+          <md-card-subtitle>{{user.email}}</md-card-subtitle>
+        </md-card-header>
+        <div class="md-card-options">
+          <div class="options-wrap">
+            <button type="button" class="btn btn-secondary"><i class="material-icons icon-sm">&#xE872;</i></button>
+            <button type="button" class="btn btn-secondary" (click)="openModalForm(user.id)"><i class="material-icons icon-sm">&#xE254;</i></button>
+          </div>
+        </div>
+      </md-card>
+    </div>
+  </div>
+</div>
